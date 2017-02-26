@@ -1,0 +1,692 @@
+.notification {
+    height: 40px;
+    margin: 0 auto;
+    box-shadow: #95a5a6 0px 0px 6px 2px;
+    color: white;
+    line-height: 40px;
+    background: #de4c4c;
+    overflow: hidden;
+    animation: reveal 1 2s;
+}
+.notification .title {
+    margin-right: 15px;
+    padding: 0px 15px;
+    background: rgba(0, 0, 0, 0.1);
+    line-height: 40px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.notification .close{
+    background: rgba(255,255,255,0.2);
+    padding: 0px 15px;
+    float: right;
+    line-height: 40px;
+    display: inline-block;
+    color: white;
+}
+.notification .close:hover{
+    cursor: pointer;
+}
+.notification.closed{
+    transform: translate(0px, -50px);
+    transition: 0.7s;
+}
+
+@keyframes reveal{
+    0%{
+        transform: translate(0px, -50px);
+    }
+    50%{
+        transform: translate(0px, -50px);
+    }
+    100%{
+        transform: translate(0px, 0px);
+    }
+}
+.loadbox {
+    background: #00ac77;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+.loading {
+    position: absolute;
+    width: 605px;
+    height: 100px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 100px;
+    text-align: center;
+}
+
+.fa {
+    color: #004630;
+    font-size: 80px;
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
+}
+
+.shadow {
+    width: 400px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #007954;
+    margin: 0 auto;
+    -webkit-animation: bounceshadow 1s infinite;
+    animation: bounceshadow 1s infinite;
+}
+
+@-webkit-keyframes bounceshadow {
+    0%, 20%, 50%, 80%, 100% {
+        width: 400px;
+    }
+    40% {
+        width: 200px;
+    }
+    60% {
+        width: 300px;
+    }
+}
+
+@keyframes bounceshadow {
+    0%, 20%, 50%, 80%, 100% {
+        width: 400px;
+    }
+    40% {
+        width: 200px;
+    }
+    60% {
+        width: 300px;
+    }
+}
+@-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-50px);
+        transform: translateY(-50px);
+    }
+    60% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-50px);
+        transform: translateY(-50px);
+    }
+    60% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}
+body {
+    background-image: url(https://imgur.com/11yrhkF.png), url(https://imgur.com/BTU19bL.png);
+    background-position: center bottom, left top;
+    background-repeat: repeat, repeat;
+    background-position: 100px, 0px;
+    background-size: 100%, cover;
+    background-attachment: fixed;
+    image-rendering: initial;
+    font-family: helvetica, arial, sans-serif;
+    margin: 0px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.text {
+    width: 150px;
+    border: 0;
+    border-radius: 4px;
+    padding: 0 20px;
+    line-height: 37px;
+}
+
+.rtext {
+    width: 190px;
+    border: 0;
+    border-radius: 4px;
+    padding: 0 20px;
+    line-height: 38px;
+    margin: 5px 0;
+}
+
+.date {
+    border: 0;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.login {
+    width: 110px;
+    line-height: 35px;
+    background: rgba(39, 174, 96, 1.0);
+    border-radius: 4px;
+    box-shadow: inset 0 0 1px #fff;
+    color: #fff;
+    font-weight: bold;
+    border: 0;
+}
+
+.login:hover {
+    background: rgba(46, 204, 113, 1.0);
+    box-shadow: inset 0 0 1px #fff;
+    transition: 0.7s;
+}
+
+.register {
+    width: 230px;
+    line-height: 35px;
+    background: rgba(192, 57, 43, 1.0);
+    border-radius: 4px;
+    box-shadow: inset 0 0 1px #fff;
+    color: #fff;
+    border: 0;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.register:hover {
+    background: rgba(231, 76, 60, 1.0);
+    box-shadow: inset 0 0 1px #fff;
+    transition: 0.7s;
+}
+
+.page {
+    height: 100%;
+    width: 100%;
+}
+
+.top {
+    width: 100%;
+    height: 100px;
+    top: 0;
+    position: absolute;
+    color: #fff;
+}
+
+.middle {
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    bottom: 30px;
+}
+
+.bottom {
+    background: #3d434c;
+    width: 100%;
+    line-height: 30px;
+    position: fixed;
+    bottom: 0;
+}
+
+.topcon {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.topleft {
+    float: left;
+    width: 362px;
+    padding-top: 20px;
+}
+
+.topright {
+    float: left;
+    line-height: 100px;
+    margin-left: 415px;
+    margin-top: -95px;
+}
+
+.midcon {
+    width: 960px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.midleft {
+    width: 660px;
+    text-align: justify;
+    float: left;
+    padding: 30px;
+}
+
+.midright {
+    width: 240px;
+    text-align: justify;
+    float: left;
+    margin: 120px 0;
+}
+
+.footer {
+    width: 720px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.orange {
+    overflow: hidden;
+    float: right;
+}
+
+.orange .content {
+    max-width: 710px;
+    padding: 0 20px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+@-moz-keyframes spin {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+.orange .umbrella {
+    background-image: url(https://robbo.pw/templates/brain/style/index/image/umbrella.png);
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top: -476px;
+    left: calc(50% - 300px);
+    -webkit-animation: spin 10s linear infinite;
+    -moz-animation: spin 10s linear infinite;
+    animation: spin 10s linear infinite;
+}
+
+.orange h2 {
+    font-size: 30px;
+    color: #FFFFFF;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.orange p {
+    font-size: 14px;
+    color: #FFFFFF;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 24px 0;
+}
+
+.orange .room {
+    width: 584px;
+    height: 475px;
+    position: relative;
+    margin: 60px auto;
+    margin-bottom: 100px;
+}
+
+.orange .room_1 {
+    background-image: url(https://robbo.pw/templates/brain/style/index/image/room_1.png);
+    width: 584px;
+    height: 475px;
+    position: absolute;
+    opacity: 0;
+    transition: all 1s;
+    filter: drop-shadow(0 6px rgba(0, 0, 0, 0.2));
+}
+
+.orange .room_2 {
+    background-image: url(https://imgur.com/lR9R8Hb.png);
+    width: 550px;
+    height: 487px;
+    position: absolute;
+    opacity: 0;
+    transition: all 1s;
+    filter: drop-shadow(0 6px rgba(0, 0, 0, 0.2));
+}
+
+.orange .room_3 {
+    background-image: url(https://imgur.com/lR9R8Hb.png);
+    width: 550px;
+    height: 487px;
+    position: absolute;
+    opacity: 0;
+    transition: all 1s;
+}
+
+@-moz-keyframes arrow_top {
+    0% {
+        top: -10px;
+    }
+    50% {
+        top: -40px;
+    }
+    100% {
+        top: -10px;
+    }
+}
+
+@-webkit-keyframes arrow_top {
+    0% {
+        top: -10px;
+    }
+    50% {
+        top: -40px;
+    }
+    100% {
+        top: -10px;
+    }
+}
+
+@keyframes arrow_top {
+    0% {
+        top: -10px;
+    }
+    50% {
+        top: -40px;
+    }
+    100% {
+        top: -10px;
+    }
+}
+
+.orange .arrow_top {
+    background-image: url(https://robbo.pw/templates/brain/style/index/image/arrow_top.png);
+    width: 46px;
+    height: 49px;
+    position: absolute;
+    top: -40px;
+    left: calc(50% - 26px);
+    z-index: 5;
+    -webkit-animation: arrow_top 1.5s infinite ease-in-out;
+    -moz-animation: arrow_top 1.5s infinite ease-in-out;
+    animation: arrow_top 1.5s infinite ease-in-out;
+}
+
+.orange .room #rabbo {
+    background-image: url(https://imgur.com/gUnelR5.png);
+    background-position: 0 0;
+    width: 51px;
+    height: 89px;
+    position: absolute;
+    left: 234px;
+    top: 146px;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.orange .room #rabbo.dance {
+    animation: rabbo 2s steps(6);
+    background-position: 100% 0;
+}
+
+@keyframes rabbo {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -306px 0;
+    }
+}
+
+.orange .room .box_msg {
+    background-color: #3d434c;
+    width: 228px;
+    padding: 20px 26px;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 315px;
+    bottom: -85px;
+    top: 400px;
+    opacity: 0;
+    transition: all 1s;
+    border: 2px #31363d solid;
+}
+
+.orange .room .box_msg.active {}
+
+.orange .room .box_msg.small {}
+
+.orange .room .box_msg h3 {
+    font-size: 20px;
+    color: #ffffff;
+    text-align: left;
+    line-height: 35px;
+    float: left;
+    width: 100%;
+    margin-bottom: 7px;
+}
+
+.orange .room .box_msg p {
+    line-height: 20px;
+    font-size: 14px;
+    color: #fafafa;
+    text-shadow: none;
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.orange .room .box_msg button {
+    background-color: #F1F1F1;
+    border: none;
+    height: 36px;
+    padding: 0 28px;
+    border-radius: 4px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    color: #666666;
+    text-transform: uppercase;
+    text-align: center;
+    float: left;
+    margin-right: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.orange .room .box_msg button:hover {
+    opacity: 0.8;
+}
+
+.orange .room .box_msg.final button.green {
+    width: 100%;
+    height: 72px;
+    font-size: 26px;
+}
+
+.orange .room .furni {
+    background-image: url(https://imgur.com/JIRP6Mn.png);
+    width: 550px;
+    height: 487px;
+    position: absolute;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.orange .room .friends {
+    background-image: url(https://imgur.com/XxEsqIr.png);
+    width: 550px;
+    height: 487px;
+    position: absolute;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.orange .active {
+    opacity: 1!important;
+}
+
+.checkin_habbo_but {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 17px;
+    margin-top: 10px;
+    background-color: #10af38;
+    color: white;
+    float: left;
+    width: 240px;
+    border: none;
+    margin-right: 100px;
+    font-size: 16px;
+    font-weight: 400;
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.45), inset 0px -30px 0px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    text-align: center;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 22px;
+}
+
+.checkin_habbo_but:hover {
+    background-color: #129834;
+}
+
+.input_register {
+    width: 240px;
+    padding: 14px;
+    border: 2px #31363d solid;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 16;
+    background: #3d434c;
+    margin-bottom: 10px;
+}
+
+.checkin_habbo_but_login {
+    padding: 10px;
+    background-color: #10af38;
+    color: white;
+    width: 110px;
+    position: absolute;
+    border: none;
+    margin-top: -73px;
+    margin-left: 430px;
+    float: right;
+    font-size: 16px;
+    font-weight: 400;
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.45), inset 0px -22px 0px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    text-align: center;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 22px;
+}
+
+.checkin_habbo_but_login:hover {
+    background-color: #129834;
+}
+
+.input_login {
+    width: 210px;
+    padding: 14px;
+    border: 2px #272b30 solid;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 16;
+    background: #31363d;
+    margin-bottom: 10px;
+}
+
+.logo {
+    margin-top: -15px;
+    background: url(https://imgur.com/BpEiaPp.png);
+    width: 362px;
+    float: left;
+    height: 87px;
+    -webkit-transition: margin 0.2s ease-out;
+    -moz-transition: margin 0.2s ease-out;
+}
+
+.footer-content {
+    width: 960px;
+    border-top: 2px dotted #434a54;
+    color: rgb(255, 255, 230);
+    font-size: 13px;
+    text-align: center;
+    margin-top: 20px;
+    height: 70px;
+    padding: 10px;
+    line-height: 25px;
+    display: block;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.footer-content .left-content {
+    float: left;
+}
+
+.footer-copyright {
+    height: 70px;
+    width: 400px;
+}
+
+.footer-content .right-content {
+    float: right;
+}
+
+.footer-nav {
+    height: 70px;
+    width: 400px;
+    margin-right: -15px;
+}
+
+.footer-nav li {
+    list-style: none;
+    float: right;
+    color: #ffffff;
+    padding: 4px;
+    border-bottom: dotted 2px #434a54;
+    margin-right: 15px;
+}
+
+.onlineusers {
+    width: 200px;
+    position: absolute;
+    height: 10;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.45);
+    top: 98px;
+    margin-left: 72px;
+    color: #fff;
+    line-height: 14px;
+    font-size: 18px;
+    text-align: center;
+}
