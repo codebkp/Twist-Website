@@ -1,0 +1,113 @@
+<html>
+<head>
+    <title><%= website.name %>- Welcome Back</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="page-type" content="Habbo Retro">
+    <meta name="audience" content="All">
+    <meta http-equiv="content-language" content="en">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" type="text/css" href="<%= website.web_folder %>/css/index.css">
+    <link rel="icon" href="<%= website.web_folder %>/img/favicon.png" type="image/png">
+</head>
+<body>
+<div class="page">
+    <% if (error.length > 0) { %>
+        <div class="notification error">
+            <span class="title"><img src="https://imgur.com/77F0BB8.png" style="height: 26px;position: absolute;margin-top: 7px;margin-left: -10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Error</span> <%= error %><span class="close">X</span>
+        </div>
+    <div class="top" style="margin-top:45px;">
+
+    <% } else { %>
+        <div class="top">
+    <% } %>
+
+        <div class="topcon">
+                    <div class="topleft">
+                        <a href="index"><div class="logo"></div></a>
+                        <div class="onlineusers"><b><%= server.users_online %></b> Users Online!</div>
+                    </div>
+                    <div class="topright">
+                        <form id="loginformitem" action="/login" name="loginformitem" method="post">
+                            <input type="text" name="username" placeholder="Username" class="input_login" id="username"/>
+                            <input type="password" name="password" placeholder="Password" class="input_login" id="password"/>
+                            <button type="submit" class="checkin_habbo_but_login" value="Login" name="login">Login </button>
+                        </form>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+            <div class="middle">
+                <div class="midcon">
+                    <div class="midleft" style="padding:18px;">
+                        <div class="orange">
+                            <div class="content">
+                                <div class="room">
+                                    <div class="room_1" id="room_1"></div>
+                                    <div class="room_2" id="room_2"></div>
+                                    <div class="room_3" id="room_3"></div>
+                                    <div class="furni" id="furni"></div>
+                                    <div class="friends" id="friends"></div>
+                                    <div id="Robbo" class="active"></div>
+                                    <div class="box_msg" id="box_1">
+                                        <h3>What is Twist?
+                                            <img src="https://imgur.com/46WLfz4.png" style="float: left;margin-left: -10px;margin-right: 10px;">
+                                        </h3>
+                                        <p>Twist is a free virtual world where you can chat, walk, and friends can meet. It is also possible to arrange your own room!</p>
+                                    </div>
+                                    <div class="box_msg small" id="box_2">
+                                        <h3>Get started!
+                                            <img src="https://imgur.com/fOSkILc.png" style="float: left;margin-left:  -10px;margin-right: 10px;">
+                                        </h3>
+                                        <p>Style your own avatar to the latest fashion trends with out big selection of new and custom clothes updated every week!</p>
+                                    </div>
+                                    <div class="box_msg" id="box_3">
+                                        <h3>Build rooms!
+                                            <img src="https://imgur.com/JYCGNFu.png" style="float: left;margin-left: -10px;margin-right: 10px;">
+                                        </h3>
+                                        <p>Build your own room and get involved in great competitions. Become one of the richest in the hotel, join the rest and have fun!</p>
+                                    </div>
+                                    <div class="box_msg" id="box_4">
+                                        <h3>Make friends!
+                                            <img src="https://imgur.com/M78JeVC.png" style="float: left;margin-left: -10px;margin-right: 10px;">
+                                        </h3>
+                                        <p>On Twist you can make new friends. Chat with them, play soccer or help with building a room. It's all in Twist Hotel!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="midright" style="background: #3d434c;padding: 10px;border-radius: 2px;border: solid 2px #31363d;">
+                        <h2 align="center" style="text-shadow: 0 1px 2px rgba(0,0,0,0.2)">Sign up now for free!</h2><br>
+                        <form action="/register" method="post" align="center">
+                            <input type="text" name="username" placeholder="Username" class="input_register" id="username"/><br>
+                            <input type="text" name="mail" placeholder="Email" class="input_register"><br>
+                            <input type="password" name="password" placeholder="Password" class="input_register" id="password" /><br>
+                            <input type="password" name="password_confirmation" placeholder="Repeat Password" class="input_register" id="retypenpassword" /><br>
+                            <input type="submit" class="checkin_habbo_but" value="Register Now!" name="register">
+                        </form>
+                    </div>
+                    <div style="clear: both;"></div>
+                    <div class="footer-content">
+                        <div class="left-content">
+                            <div class="footer-copyright">
+                                <img style="float:left;padding-right:10px;margin-top: 12px;" src="https://imgur.com/AEMwuXs.png">
+                                <p style="float:left;text-align: left;">Copyright &copy; 2017, <%= website.name %> - All rights reserved.<br>All imaging materials subject to the law of Sulake.<br><a href="https://habbo.com/"><b>Click here</b></a>, to enter the real Habbo.</p>
+                            </div>
+                        </div>
+                        <div class="right-content">
+                            <div class="footer-nav">
+                                <li>Rules</li>
+                                <li>Parents</li>
+                                <li>Help</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="<%= website.web_folder %>/js/dependencies/jquery.min.js"></script>
+    <script type="text/javascript" src="<%= website.web_folder %>/js/dependencies/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="<%= website.web_folder %>/js/pages/index.js"></script>
+</body>
+</html>

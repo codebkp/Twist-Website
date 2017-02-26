@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title><%= website.name %> - Client</title>
+        <link rel="icon" href="<%= website.web_folder %>/img/favicon.png" type="image/png">
+        <script type="text/javascript" src="<%= website.web_folder %>/js/swfobject.js"></script>
+        <link type="text/css" href="<%= website.web_folder %>/css/client.css" rel="stylesheet">
+        <script type="text/javascript">
+            var BaseUrl = "https://swfs.twist.wtf/gordon/PRODUCTION-201607262204-86871104/";
+            var flashvars =
+                {
+                    "client.allow.cross.domain" : "1",
+                    "client.notify.cross.domain" : "0",
+                    "connection.info.host" : "185.44.78.247",
+                    "connection.info.port" : "30000",
+                    "site.url" : "https://twist.wtf",
+                    "url.prefix" : "https://twist.wtf",
+                    "client.reload.url" : "https://twist.wtf/client",
+                    "client.fatal.error.url" : "https://twist.wtf/disconnected",
+                    "client.connection.failed.url" : "https://twist.wtf/disconnected",
+                    "external.variables.txt" : "https://swfs.twist.wtf/gamedata/external_variables.txt?cache=1487741011",
+                    "external.texts.txt" : "https://swfs.twist.wtf/gamedata/external_flash_texts.txt?cache=1487741011",
+                    "productdata.load.url" : "https://swfs.twist.wtf/gamedata/productdata.txt?cache=1487741011",
+                    "furnidata.load.url" : "https://swfs.twist.wtf/gamedata/furnidata.xml?cache=1487741011",
+                    "external.figurepartlist.txt" : "https://swfs.twist.wtf/gamedata/figuredata.xml?cache=1487741011",
+                    "external.override.texts.txt" : "https://swfs.twist.wtf/gamedata/override/external_flash_override_texts.txt?cache=1487741011",
+                    "external.override.variables.txt" : "https://swfs.twist.wtf/gamedata/override/external_override_variables.txt?cache=1487741011",
+                    "use.sso.ticket" : "1",
+                    "sso.ticket" : "<%= token %>",
+                    "client.starting.revolving" : "Dial-up users, prepare to wait!/Frank.. I think you broke it/Sebgar is a PIMP/Loading funny message... please wait./Would you like fries with that?/Follow the yellow duck./Time is just an illusion./Are we there yet?!/I like your t-shirt./Look left. Look right. Blink twice. Ta da!/It\'s not you, it\'s me./Shhh! I\'m trying to think here./Loading pixel universe.",
+                    "processlog.enabled" : "0",
+                    "flash.client.url" : BaseUrl,
+                    "flash.client.origin" : "popup",
+                    "external.figurepartlist.txt" : "https://swfs.twist.wtf/gamedata/figuredata.xml?cache=1487741011",
+                    "nux.lobbies.enabled" : "true"
+
+                };
+            var params =
+                {
+                    "base" : BaseUrl + "/",
+                    "allowScriptAccess" : "always",
+                    "menu" : "false"
+                };
+            swfobject.embedSWF(BaseUrl + "TwistNew1.1.swf", "client", "100%", "100%", "10.0.0", "https://swfs.twist.wtf/gordon/PRODUCTION-201607262204-86871104expressInstall.swf", flashvars, params, null);
+        </script>
+
+    </head>
+    <body id="client">
+
+    </body>
+</html>

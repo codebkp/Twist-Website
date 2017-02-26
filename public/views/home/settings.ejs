@@ -1,0 +1,176 @@
+<% include ../../header %>
+<div class="box" style="width: 700px;float:left;">
+    <div class="title">Settings</div>
+    <ul class="tabs" style="width: 100%;background-color: white;margin: 0px;margin-bottom: 50px;margin-left: -40;">
+        <li class="tab"><a href="#settings1">Account settings</a></li>
+        <li class="tab"><a href="#settings2">Profile settings</a></li>
+        <li class="tab"><a href="#sessions">Login Attempts</a></li>
+        <div class="indicator" style="right: 453.333px; left: 0px;"></div></ul>
+
+    <div style="padding: 10px;">
+        <!-- Personal Settings -->
+        <div id="settings1">
+            <form method="post" action="/settings/personal">
+                <div style="margin-bottom: 10px;background: #3d434c;width: 95%;height: 125px;padding: 17px;">
+
+                    <h3><img src="https://imgur.com/bnGSyZQ.png"> Your Motto</h3><p>Your motto is what other users will see on your Twist Home page and when click ON your user in the hotel.</p>
+                    <input style="width:100%;" class="input_box" type="text" name="motto" size="32" maxlength="32" value="<%= user.motto %>">
+                    <div style="height:10px;"></div>
+                </div>
+
+                <div style="margin-bottom: 10px;background: #3d434c;width: 95%;height: 125px;padding: 17px;">
+
+                    <h3><img src="https://imgur.com/NlIpcR5.png"> Your E-mail Address</h3><p>Your email address is what you may need to reset your password incase you forget it.</p>
+                    <input style="width:100%;" class="input_box" type="text" name="mail" size="32" value="<%= user.mail %>">
+                    <div style="height:10px;"></div>
+                </div>
+
+                <div style="margin-bottom: 10px;background: #3d434c;width: 95%;height: 290px;padding: 17px;">
+
+                    <h3><img src="https://imgur.com/JcwzSnT.png"> Current Password</h3><p>Your current password is the password you use to login to the main website. Only fill this in if you wish to change your login password.</p>
+                    <input style="width:100%;" class="input_box" type="password" name="current_password" value="">
+                    <div style="height:10px;"></div>
+
+
+                    <h3><img src="https://imgur.com/QrsE1xF.png"> New Password</h3><p>Please only change this field if you wish to change your login password.</p>
+                    <input style="width:100%;" class="input_box" type="password" name="new_password" value=""><br><br><br>
+                </div>
+                <button style="float:right;" type="submit" name="account" class="normal_button_green" value="">
+                    Save Changes
+                </button>
+
+            </form>
+        </div>
+
+        <!-- Profile Settings -->
+        <div id="settings2" style="display: none;">
+            <form method="post" action="/settings/profile">
+
+                <div style="margin-bottom: 10px;background: #3d434c;width: 95%;height: 155px;padding: 17px;">
+                    <h3><img src="https://imgur.com/EgymsuI.png"> YouTube Video</h3>
+                    <p>Your YouTube video will be shown on your <strong>Profile</strong>.</p>
+                    <p>https://www.youtube.com/watch?v=</p>
+                    <input style="width:100%;" class="input_box" name="youtube_embed" value="<%= user.youtube_embed %>" id="youtubevideo">
+
+                    <div style="height:10px;"></div>
+
+
+
+                </div>
+
+                <div style="margin-bottom: 10px;background: #3d434c;width: 95%;height: 125px;padding: 17px;">
+                    <h3><img src="https://imgur.com/dn3qNpk.png"> About Me</h3>
+                    <p>Your About Me will be shown on your <strong>Profile</strong>.</p>
+                    <input style="width:100%;" class="input_box" name="aboutme" value="<%= user.aboutme %>" id="aboutme">
+
+                    <div style="height:10px;"></div>
+
+
+
+                </div>
+
+                <div style="margin-bottom: 10px;background: #3d434c;width: 95%;height: 125px;padding: 17px;">
+                    <h3><img src="https://i.imgur.com/yWvLR2Z.png"> Twitter</h3>
+                    <p>Your Twitter will be shown on your <strong>Profile</strong>.</p>
+                    <input style="width:100%;" class="input_box" name="twitter" value="<%= user.twitter %>" id="twitter">
+
+                    <div style="height:10px;"></div>
+
+
+
+                </div>
+
+
+                <div style="margin-bottom: 10px;background: #3d434c;width: 95%;height: 125px;padding: 17px;">
+                    <h3><img src="https://imgur.com/Sa0wsIr.png"> Instagram</h3>
+                    <p>Your Instagram will be shown on your <strong>Profile</strong>.</p>
+                    <input style="width:100%;" class="input_box" name="instagram" value="<%= user.instagram %>" id="instagram">
+
+                    <div style="height:10px;"></div>
+
+
+
+                </div>
+
+
+                <div style="margin-bottom: 10px;background: #3d434c;width: 95%;height: 125px;padding: 17px;">
+                    <h3><img src="https://imgur.com/2k57i7x.png"> Snog</h3>
+                    <p>Your Snog will be shown on your <strong>Profile</strong>.</p>
+                    <input style="width:100%;" class="input_box" name="snog" value="<%= user.snog %>" id="snog">
+
+                    <div style="height:10px;"></div>
+
+
+
+                </div>
+
+
+                <div style="margin-bottom: 10px;background: #3d434c;width: 95%;height: 125px;padding: 17px;">
+                    <h3><img src="https://imgur.com/SMKiQpE.png"> Kik</h3>
+                    <p>Your Kik will be shown on your <strong>Profile</strong>.</p>
+                    <input style="width:100%;" class="input_box" name="kik" value="<%= user.kik %>" id="kik">
+
+                    <div style="height:10px;"></div>
+
+
+
+                </div>
+
+
+                <div style="margin-bottom: 10px;background: #3d434c;width: 95%;height: 125px;padding: 17px;">
+                    <h3><img src="https://imgur.com/cRNWM33.png"> Snapchat</h3>
+                    <p>Your Snapchat will be shown on your <strong>Profile</strong>.</p>
+                    <input style="width:100%;" class="input_box" name="snapchat" value="<%= user.snapchat %>" id="snapchat">
+
+                </div>
+
+
+                <div style="margin-bottom: 10px;background: #3d434c;width: 95%;height: 125px;padding: 17px;">
+                    <h3><img src="https://imgur.com/8jArQou.png"> Skype</h3>
+                    <p>Your Skype will be shown on your <strong>Profile</strong>.</p>
+                    <input style="width:100%;" class="input_box" name="skype" value="<%= user.skype %>" id="skype">
+
+                </div>
+                <button style="float: right;" type="submit" name="account" class="normal_button_green" value=""><span style="cursor: pointer">Save Changes</span></button>
+
+
+
+
+            </form>
+        </div>
+
+        <!-- Login Attempts -->
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
+        <div id="sessions">
+            <p>Other IP Addresses</p>
+            <% user.logins.forEach (function (login) { %>
+                <% if (login.ip_address != user.ip_last) { %>
+                    <p><%= login.ip_address %></p>
+                <% } %>
+            <% }); %>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+<% include ../../footer %>

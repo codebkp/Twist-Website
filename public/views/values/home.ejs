@@ -1,0 +1,26 @@
+<% include ../../header %>
+
+    <% if (user.rank > 4) { %>
+        <a href="/values/actions/create"><input value="Add Rare" style="float:left;margin-left: 20px;position:absolute;width: 220px;" class="normal_button_green"></a>
+        <br><br>
+    <% } %>
+
+    <% values.forEach(function (value) { %>
+        <div class="value_box">
+            <div class="value_title"><%= value.name %></div>
+            <div class="line"></div>
+            <div class="furni" style="background-image: url('<%= value.imgurl %>');"></div>
+            <div class="price"><%= value.price_display %> Credits
+                <br><%= value.timestamp %></div>
+            <% if (user.rank > 4) { %>
+                <a href="/values/actions/edit/<%= value.id %>">
+                    <input value="Edit" class="normal_button_green" style="float:left;width: 90px;position: absolute;margin-top: -220px;margin-left: 0px;">
+                </a>
+                <a href="/values/actions/delete/<%= value.id %>">
+                    <input value="Delete" class="normal_button_red" style="float:right;width: 90px;position: absolute;margin-top: -220px;margin-left: 130px;">
+                </a>
+            <% } %>
+        </div>
+    <% }); %>
+
+<% include ../../footer %>

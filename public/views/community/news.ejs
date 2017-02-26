@@ -1,0 +1,39 @@
+<% include ../../header %>
+
+<!-- Articles Container -->
+<div class="box" style="width: 315px;margin-top: 10px;float: left;">
+    <div class="title">Other Articles</div>
+    <div class="boxcontent">
+        <h3 style="color:#FFF;">All Time </h3>
+        <% other.forEach (function (post) { %>
+            <a href="/community/news/<%= post.id %>">
+                <div class="Newslist_Item" style="background: url(<%= website.web_folder %>/img/news/<%= post.image %>) 542px 129px;"><span style=" background: rgba(0, 0, 0, 0.5); padding: 5px; border-radius: 2px; "><%= post.title %>»</span>
+                </div>
+            </a>
+        <% }); %>
+    </div>
+</div>
+
+<!-- Article Container -->
+<div class="box" style="width: 645px;margin-right: -20px;margin-top: 10px;float: right;">
+    <div class="title"><%= article.title %></div>
+    <div style="padding:7px;">
+        <%- article.longstory %>
+        <br><br><div style="border: 1px solid rgba(0,0,0,0.05);"></div><br>
+        Written by <%= article.author %>
+            <div class="newsArticleInfo">
+                <div id="info" style="float:left;">
+                    <a href="/community/news/actions/like/<%= article.id %>">
+                        <%= article.likes.length %> people like this <img src="https://imgur.com/QJb6uc4.png">
+                    </a>
+                </div>
+            </div>
+        </i></div>
+
+    <i style="background: url(\'https://playtwist.pw/app/tpl/skins/habbo/css/1.gif\') repeat scroll 0% 0% transparent;"> </i>
+    <br><br>
+</div>
+
+
+
+<% include ../../footer %>

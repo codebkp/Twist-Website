@@ -1,0 +1,105 @@
+<% include ../../header %>
+<!-- Bug Container -->
+<div style="background:#0E4D6C;text-transform:uppercase;padding:1%;width:98%;color:white;text-align:center;border-radius:4px;margin:0 auto;">
+    Reports bugs by clicking <b><a href="/contact">here</a></b>
+</div> <br>
+
+<!-- User Container -->
+<div class="mepage_userbox">
+    <div class="mepage_welcome">Hey, <b><%= user.username %></b> <br>
+        <div class="mepage_motto"><img style="position: relative;top: 4px;" src="https://imgur.com/fPslslL.png"> <%= user.motto %></div>
+    </div>
+    <a href="https://findretros.com/vote/<%= website.findretros %>"><div style="float: right;margin-top: 50px;" class="checkin_habbo_but">
+            Enter Hotel
+        </div></a>
+    <div class="backgrounduser">
+        <div class="avatar">
+            <img src="https://avatar-retro.com/habbo-imaging/avatarimage?figure=<%= user.look %>&amp;size=l&amp;action=wav&amp;direction=2&amp;head_direction=3&amp;gesture=sml&amp;action=crr=3,wav">
+        </div>
+    </div>
+    <div class="mepage_currency">
+        <div id="v&quot;credits&quot;" style="float: left;margin-left: 12px;margin-right: 20px;color: #fffa79;">
+            <img src="https://imgur.com/SccYIJU.png" style="position: relative;top: 4px;"> <%= user.credits_format %> Credits
+        </div>
+        <div id="duckets" style="float: left;margin-right: 12px;margin-top: 1px;color: #f2cce3;">
+            <img src="https://imgur.com/jzQ5UjF.png" style="position: relative;top: 4px;"> <%= user.pixels_format %> Duckets
+        </div>
+        <div id="diamonds" style="float: left;margin-right: 12px;margin-top: 1px;color: #caf1f3;">
+            <img src="https://imgur.com/gtUQoMV.png" style="position: relative;top: 4px;"> <%= user.diamonds_format %> Diamonds
+        </div>
+    </div>
+    <div class="fade"></div>
+</div>
+
+
+
+<!-- Radio Container -->
+<iframe style="width: 960px; height: 60px; border: 0;" src="https://player.shoutca.st/?username=playtwistpw"></iframe>
+<div class="box" style="background: #2f343c;text-align:center;float:left;margin-right: 6px;width:300px;padding:8px;">
+    TWIST FM RADIO
+</div>
+<div class="box" style="background: #2f343c;text-align:center;float:left;margin-right: 6px;width:300px;padding:8px;">
+    Current DJ : <span id="cc_strinfo_title_playtwistpw" class="cc_streaminfo">Twist FM</span>
+</div>
+<div class="box" style="background: #2f343c;text-align:center;float:left;width:300px;padding:8px;">
+    Current listeners: <span id="cc_strinfo_listeners_playtwistpw" class="cc_streaminfo">0</span> / <span id="cc_strinfo_maxlisteners_playtwistpw" class="cc_streaminfo">300</span>
+</div>
+
+<!-- News Container -->
+<div class="carousel">
+    <div class="carousel-inner">
+        <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+        <% count = 0; news.forEach (function (article) { %>
+            <% count++; %>
+            <div class="carousel-item">
+                <div class="image" style="background: url(<%= website.web_folder %>/img/news/<%= article.image %>);">
+                    <p><a href="/news/<%= article.id %>"><%= article.title %></a><br>
+                        <font size="2" color="white"><%= article.shortstory %></font>
+                    </p></div>
+            </div>
+            <input class="carousel-open" type="radio" id="carousel-<%= count %>" name="carousel" aria-hidden="true" hidden="">
+        <% }); %>
+        %
+        <label for="carousel-3" class="carousel-control prev control-1"></label>
+        <label for="carousel-2" class="carousel-control next control-1"></label>
+        <label for="carousel-1" class="carousel-control prev control-2"></label>
+        <label for="carousel-3" class="carousel-control next control-2"></label>
+        <label for="carousel-2" class="carousel-control prev control-3"></label>
+        <label for="carousel-1" class="carousel-control next control-3"></label>
+        <ol class="carousel-indicators">
+            <li>
+                <label for="carousel-1" class="carousel-bullet"><div style=""></div></label>
+            </li>
+            <li>
+                <label for="carousel-2" class="carousel-bullet"><div style=""></div></label>
+            </li>
+            <li>
+                <label for="carousel-3" class="carousel-bullet"><div style=""></div></label>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+
+
+
+<!-- Updates Container -->
+<div class="box" style="top: 15px;position: relative;width: 620px;float: left;"><div class="title">Twist Updates</div>
+    <div class="boxcontent">
+        <iframe style="float:left;position:relative;width: 600px;height: 300px;border: 0px;" src="/updates"></iframe>
+    </div>
+</div>
+
+<!-- Social Networks -->
+<div id="socialboxbtn-container">
+    <a href="https://www.facebook.com/<%= website.facebook %>" class="socialboxbtn socialboxfb" target="_blank">
+        Like on Facebook
+    </a><br>
+    <a href="https://twitter.com/<%= website.twitter %>" class="socialboxbtn socialboxtw" target="_blank">
+        Follow on Twitter
+    </a>
+</div>
+
+
+<% include ../../footer %>

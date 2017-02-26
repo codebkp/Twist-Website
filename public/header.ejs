@@ -1,0 +1,112 @@
+
+<html>
+    <head>
+        <script language="javascript" type="text/javascript" src="https://equinox.shoutca.st/system/streaminfo.js"></script>
+        <title><%= website.name %> - <%= page %></title>
+        <link rel="icon" href="<%= website.web_folder %>/img/favicon.png" type="image/png">
+        <link type="text/css" href="<%= website.web_folder %>/css/themes/<%= user.skin %>.css" rel="stylesheet">
+    </head>
+
+<body>
+<div class="header">
+    <div class="colour_manager">
+        <a href="/switch_theme/1"><button style="border: none;" class="red"></button></a>
+        <a href="/switch_theme/2"><button style="border: none;" class="yellow"></button></a>
+        <a href="/switch_theme/3"><button style="border: none;" class="green"></button></a>
+        <a href="/switch_theme/4"><button style="border: none;" class="blue"></button></a>
+        <a href="/switch_theme/5"><button style="border: none;" class="purple"></button></a>
+        <a href="/switch_theme/6"><button style="border: none;" class="pink"></button></a>
+    </div>
+    <div class="hotel">
+        <div class="header_stuff_left">
+            <div class="logo"></div>
+
+        </div>
+        <div class="header_stuff_right">
+            <div class="online_users">
+                <% if (server.users_online > 0) { %>
+                    <%= server.users_online %> Users Online
+                <% } else if (server.users_online == 1) { %>
+                    1 User Online
+                <% } else { %>
+                    Nobody is online
+                <% } %>
+            </div>
+            <div class="frank">
+            </div>
+        </div>
+    </div>
+</div>
+<nav>
+    <ul class="navigation">
+        <li class="submenu">
+            <a href="#"><span><%= user.username %></span><div class="nav_arrow"></div></a>
+            <ul>
+                <li> <a href="/me">Home</a> </li>
+                <li> <a href="/settings"> Account Settings </a></li></li>
+                <li> <a href="/profile/<%= user.username %>">My Profile</a> </li>
+                <li> <a href="/logout">Log out</a> </li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a href="#"><span>Community</span><div class="nav_arrow"></div></a>
+            <ul>
+                <li> <a href="/community">Community</a> </li>
+                <li> <a href="/community/news">News Articles</a> </li>
+                <li> <a href="/community/leaderboards">The Leaderboards</a> </li>
+                <li> <a href="/community/graph">Activity Graph</a> </li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a href="#"><span>Snog</span><div class="nav_arrow"></div></a>
+            <ul>
+                <li> <a href="/snog/dashboard"> Dashboard </a> </li>
+                <li> <a href="/snog/profile/<%= user.username%>"> My Profile </a> </li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a href="#"><span>Our Team</span><div class="nav_arrow"></div></a>
+            <ul>
+                <li> <a href="/community/staff">Staff Team</a> </li>
+                <li> <a href="/community/staff/events">Events Staffs</a> </li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a href="#"><span>Shop</span><div class="nav_arrow"></div></a>
+            <ul>
+                <li> <a href="/store/vip"> Vip Packages </a> </li>
+                <li> <a href="/store/rares"> Rare Packages </a> </li>
+                <li> <a href="/values"> Rare Values </a> </li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a href="#"><span>Development</span><div class="nav_arrow"></div></a>
+            <ul>
+                <li> <a href="/development/ideas"> Submit Ideas </a> </li>
+                <li> <a href="/development/bugs"> Bug Tracker </a> </li>
+                <li> <a href="/development/about"> About Website </a> </li>
+            </ul>
+        </li>
+
+        <% if (user.rank > 4) { %>
+            <li style="float:right;"> <a href="http://admin.twist.wtf"> Admin Panel </a></li>
+        <% } %>
+
+        <% if (user.rank > 1) { %>
+            <li style="float:right;"> <a href="/events/panel"> Events Panel </a></li>
+        <% } %>
+    </ul>
+    <a href="#" id="drop">Menu<i class="icon-reorder"></i></a>
+</nav>
+<div class="content">
+    <% if (error.length > 0) { %>
+        <div style="background:#C12525;padding:1%;width:98%;color:white;text-align:center;border-radius:4px;margin:0 auto;">
+            <%= error %>
+        </div> <br>
+    <% }  %>
+
+    <% if (success.length > 0) { %>
+    <div style="background:#0E4D6C;padding:1%;width:98%;color:white;text-align:center;border-radius:4px;margin:0 auto;">
+        <%= success %>
+    </div> <br>
+<% }  %>

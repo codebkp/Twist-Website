@@ -1,0 +1,44 @@
+<% include ../../header %>
+
+<div class="box" style="top: 15px;position: relative;width: 325px;float: left;"><div class="title">About <%= website.name %> Staff</div>
+    <div class="boxcontent">
+        We, the employees of <%= website.name %> hotel are responsible for your safety at the hotel. If you run into serious trouble or problems with another player, you may contact our moderation team anytime.
+        <br><br>
+        In addition to safety, we also provide fun and entertainment around the hotel. This is important because we would hate to have our users bored. If no event is currently taking place, you can organize a private event in your own room!
+    </div>
+</div>
+
+<% staff.forEach(function (rank) { %>
+    <div class="box" style="top: 15px;position: relative;width: 615px;float: right;margin-left: 20px;"><div class="title"><%= rank.name %></div>
+        <div class="boxcontent">
+            <% if (rank.users.length > 0) { %>
+                <% rank.users.forEach(function (member) { %>
+                <a href="/profile/<%= member.username %>">
+                    <div id="teambox">
+                        <div class="fadesmall">
+                            <div class="teamicon"><div style="background: url(https://avatar-retro.com/habbo-imaging/avatarimage?figure=<%= member.look %>&amp;direction=2&amp;head_direction=2&amp;size=l&amp;action=wlk&amp;gesture=sml)center center;opacity: 1;height: 170px;width: 75px;margin-left: auto;margin-right:auto;border-radius: 100px;"></div></div>
+                            <p class="teamfont"><b><%= member.username %></b></p>
+                            <p class="small"><b><%= member.motto %></b></p>
+                        </div>
+                    </div>
+                </a>
+                <% }); %>
+            <% } else { %>
+            <p>This rank is empty!</p>
+            <% }%>
+        </div>
+    </div>
+<% }); %>
+
+
+<style>
+    #teambox {
+        opacity: .8;
+    }
+    #teambox:hover {
+        opacity: 1;
+    }
+</style>
+
+
+<% include ../../footer %>

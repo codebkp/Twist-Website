@@ -1,0 +1,46 @@
+<div class="footer-content">
+    <div class="left-content">
+        <div class="footer-copyright">
+            <img style="float:left;padding-right:10px;margin-top: 12px;" src="https://imgur.com/AEMwuXs.png">
+            <p style="float:left;text-align: left;">Copyright &copy; 2017 <%= website.name %> - All rights reserved.<br>All imaging materials subject to the law of Sulake.<br><a href="http://habbo.com/"><b>Click here</b></a>, to enter the real Habbo.</p>
+        </div>
+    </div>
+    <div class="right-content">
+        <div class="footer-nav">
+            <a href="/under-the-hood"><li>CMS Information</li></a>
+            <a href="/rules"><li>Rules</li></a>
+            <a href="/parents"><li>Parents</li></a>
+            <a href="/contact"><li>Help</li></a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>(function ($) {
+        var dropper = $('a#drop'), menu = $('nav>ul');
+        subMenu = $('nav>ul>li.submenu');
+        link = menu.find('li'), dropper.on('click', function (e) {
+            menu.slideToggle();
+            e.preventDefault();
+        });
+        $(window).resize(function () {
+            var winWidth = $(this).width();
+            if (winWidth > 800 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+            }
+        });
+        link.on('click', function () {
+            var winWidth = $(window).width();
+            if (winWidth < 800 && !$(this).hasClass('submenu')) {
+                menu.slideToggle();
+            }
+        });
+        subMenu.hover(function () {
+            $(this).children('ul').stop().slideDown();
+        }, function () {
+            $(this).children('ul').stop().slideUp();
+        });
+    }(jQuery));
+</script>

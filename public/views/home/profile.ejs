@@ -1,0 +1,85 @@
+<% include ../../header %>
+
+
+<!-- User Container -->
+<div style="background: url(https://imgur.com/z5KkKsv.png);width: 204px;height: 290px;display: block;position: relative;float: left;
+    margin: -5px;margin-bottom: 20px;">
+    <div style="color: #fff;padding: 14px 30px;font-size: 13;">
+        <%= profile.username %>'s Profile
+    </div>
+    <div style="background:url(https://avatar-retro.com/habbo-imaging/avatarimage?figure=<%= profile.look %>&amp;direction=4&amp;head_direction=4&amp;action=wlk&amp;gesture=sml)center center;float:left;opacity: 1;height: 120px;width: 75px;margin-left: 10px;border-radius: 100px;margin-top:-10px;"></div>
+    <div style="margin-top:-10px;float:right;width:118px;">
+        <% profile.badge_slots.forEach(function (badge) { %>
+        <div style="float:left;margin-left:5px;padding:3px;width:42px;height:42px;" class="hastip badge">
+            <img class="hastip" src="https://swfs.twist.wtf/c_images/album1584/<%= badge.badge_id %>.gif" title="T_DEV">
+        </div>
+        <% }); %>
+    </div>
+    <div style="width: 204px;height: 20px;margin-top: 135px;text-align: left;font-size: 13;margin-left: 10px;color: white;">
+
+        <p><img src="https://imgur.com/SccYIJU.png" style="position: relative;top: 4px;"> <%= profile.credits_format %> Credits</p>
+
+        <p><img src="https://imgur.com/jzQ5UjF.png" style="position: relative;top: 4px;"> <%= profile.pixels_format %> Duckets</p>
+
+        <p><img src="https://imgur.com/gtUQoMV.png" style="position: relative;top: 4px;"> <%= profile.diamonds_format %> Diamonds</p>
+
+    </div>
+</div>
+
+<!-- Youtube Embed -->
+<% if (profile.youtube_embed != null && profile.youtube_embed.length > 0) { %>
+    <iframe style="width: 765px;border: none;float: right;height: 375px;margin-bottom: 20px;margin-right:-20px;" src="https://www.youtube.com/embed/<%= profile.youtube_embed %>?autoplay=1" allowfullscreen=""></iframe>
+<% } else { %>
+<iframe style="width: 765px;border: none;float: right;height: 375px;margin-bottom: 20px;margin-right:-20px;" src="https://www.youtube.com/embed/6Zbi0XmGtMw?autoplay=1" allowfullscreen=""></iframe>
+<% } %>
+
+<!-- Social Medias Shit -->
+<div class="box" style="float: left;width:192px;">
+    <div class="title">Social Medias</div>
+    <div style="padding:10px;">
+
+        <% if (profile.twitter != null && profile.twitter.length > 0) { g++;  %>
+            <b><img src="<%= website.web_folder %>/img/homes/twittericon.png"><font> Twitter:</font></b><font> <%= profile.twitter %></font><br><br>
+        <% } %>
+
+        <% if (profile.snog != null && profile.snog.length > 0) { g++; %>
+            <b><img src="<%= website.web_folder %>/img/homes/snogicon.png"><font> Snog:</font></b><font> <%= profile.snog %> </font><br><br>
+        <% } %>
+
+        <% if (profile.kik != null && profile.kik.length > 0) { g++; %>
+            <b><img src="<%= website.web_folder %>/img/homes/kikicon.png"><font> Kik:</font></b><font> <%= profile.kik %></font><br><br>
+        <% } %>
+
+        <% if (profile.snapchat != null && profile.snapchat.length > 0) { g++; %>
+         <b><img src="<%= website.web_folder %>/img/homes/snapchaticon.png"><font> Snapchat:</font></b><font> <%= profile.snapchat %></font><br><br>
+        <% } %>
+
+        <% if (profile.skype != null && profile.skype.length > 0) { g++; %>
+            <b><img src="<%= website.web_folder %>/img/homes/skypeicon.png"><font> Skype:</font></b><font> <%= profile.skype %></font><br><br>
+        <% } %>
+
+        <% if (profile.instagram != null && profile.instagram.length > 0) { g++; %>
+            <b><img src="<%= website.web_folder %>/img/homes/instagramicon.png"><font> Instagram:</font></b><font> <%= profile.instagram %></font>
+        <% } %>
+
+        <% if (g == 0) { %>
+            <p>This user doesn't have any social media!</p>
+        <% } %>
+    </div>
+</div>
+
+<!-- About Container -->
+<div class="box" style="float:right;width: 765px;margin-right:-20px;margin-bottom:20px;">
+    <div class="title">About <%= profile.username %></div>
+    <div style="Padding: 10px;">
+        <% if (profile.username == 'Satan' || profile.username == 'Tox') { %>
+            <h3>Claimed by Chris</h3>
+        <% } %>
+        <p><%= profile.aboutme %></p>
+    </div>
+</div>
+
+
+
+
+<% include ../../footer %>

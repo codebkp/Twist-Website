@@ -1,0 +1,67 @@
+<% include ../../header %>
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawUsers);
+    google.charts.setOnLoadCallback(drawRooms);
+
+    function drawUsers() {
+        var data = google.visualization.arrayToDataTable([
+            ['Time', 'Users'],
+            <% graph.forEach(function (g) { %>
+                ['<%= g.created_at %>', <%= g.users_online %>],
+            <% }); %>
+    ]);
+
+        var options = {
+            title: 'Users Online (Last 24 Hours)',
+            curveType: 'function',
+            legend: { position: 'bottom' },
+            vAxis: {
+                viewWindow: {
+                    min:0,
+                    max:35
+                }
+            },
+            hAxis : {
+                format : 'hA'
+            }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('users'));
+
+        chart.draw(data, options);
+    }
+
+    function drawRooms() {
+        var data = google.visualization.arrayToDataTable([
+            ['Time', 'Rooms'],
+            <% graph.forEach(function (g) { %>
+                ['<%= g.created_at %>', <%= g.rooms_active %>],
+            <% }); %>
+    ]);
+
+        var options = {
+            title: 'Active Rooms (Last 24 Hours)',
+            curveType: 'function',
+            legend: { position: 'bottom' },
+            vAxis: {
+                viewWindow: {
+                    min:0,
+                    max:20
+                }
+            }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('rooms'));
+
+        chart.draw(data, options);
+    }
+</script>
+<div id="users"></div>
+<br>
+<div id="rooms"></div>
+
+<% include ../../footer %>

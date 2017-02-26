@@ -1,0 +1,88 @@
+<% include ../../header %>
+
+
+<!-- Credits Container -->
+<div class="Box" style="width:225px;margin-right: 20px;float:left;">
+    <div class="title">Top Credits</div>
+    <% stats.credits.forEach(function (player) { %>
+        <a href="/profile/<%= player.username %>">
+            <div  class="player" style="width: 90%;height: 50px;display:block;background: rgba(255, 239, 0, 0.25);border: 2px solid rgba(255, 255, 255, 0.25);margin: 0px auto;margin-top: 5px;border-radius: 2px;margin-bottom: 5px;">
+                <div style="margin-top:9px;float:left; width:45px;height:40px;background:url(https://avatar-retro.com/habbo-imaging/avatarimage?figure=-<%= player.look %>&amp;size=m&amp;direction=3&amp;head_direction=3&amp;gesture=sml) center -18px;">
+
+                </div>
+                <div style="float:left; width:140px; margin-left:10px;margin-top:10px;">
+                    <b><%= player.username %></b>
+                    <br> <%= player.credits_format %> Credits <img src="<%= website.web_folder %>/img/credit.png">
+                </div>
+            </div>
+        </a>
+    <% }); %>
+</div>
+
+<!-- Pixels Container -->
+<div class="Box" style="width:225px;margin-right: 20px;float:left;">
+    <div class="title">Top Duckets </div>
+    <% stats.pixels.forEach(function (player) { %>
+    <a href="/profile/<%= player.username %>">
+        <div  class="player" style="width: 90%;height: 50px;display:block;background: rgba(234, 154, 215, 0.25);border: 2px solid rgba(255, 255, 255, 0.25);margin: 0px auto;margin-top: 5px;border-radius: 2px;margin-bottom: 5px;">
+            <div style="margin-top:9px;float:left; width:45px;height:40px;background:url(https://avatar-retro.com/habbo-imaging/avatarimage?figure=-<%= player.look %>&amp;size=m&amp;direction=3&amp;head_direction=3&amp;gesture=sml) center -18px;">
+
+            </div>
+            <div style="float:left; width:140px; margin-left:10px;margin-top:10px;">
+                <b><%= player.username %></b>
+                <br> <%= player.pixels_format %> Pixels <img src="<%= website.web_folder %>/img/ducket.png">
+            </div>
+        </div>
+    </a>
+    <% }); %>
+</div>
+
+
+<!-- Diamonds Container -->
+<div class="Box" style="width:225px;margin-right: 20px;float:left;">
+    <div class="title">Top Diamonds</div>
+    <% stats.diamonds.forEach(function (player) { %>
+    <a href="/profile/<%= player.username %>">
+        <div  class="player" style="width: 90%;height: 50px;display:block;background: rgba(61, 141, 119, 0.25);border: 2px solid rgba(255, 255, 255, 0.25);margin: 0px auto;margin-top: 5px;border-radius: 2px;margin-bottom: 5px;">
+            <div style="margin-top:9px;float:left; width:45px;height:40px;background:url(https://avatar-retro.com/habbo-imaging/avatarimage?figure=-<%= player.look %>&amp;size=m&amp;direction=3&amp;head_direction=3&amp;gesture=sml) center -18px;">
+
+            </div>
+            <div style="float:left; width:140px; margin-left:10px;margin-top:10px;">
+                <b><%= player.username %></b>
+                <br> <%= player.diamonds_format %> Diamonds<img src="<%= website.web_folder %>/img/diamond.png">
+            </div>
+        </div>
+    </a>
+    <% }); %>
+</div>
+
+
+<!-- Referrals Container -->
+<div class="Box" style="width:225px;float:left;">
+    <div class="title">Top Referrals </div>
+    <% stats.referrals.forEach(function (player) { %>
+    <a href="/profile/<%= player.username %>">
+        <div  class="player" style="width: 90%;height: 50px;display:block;background: rgba(112, 167, 241, 0.25);border: 2px solid rgba(255, 255, 255, 0.25);margin: 0px auto;margin-top: 5px;border-radius: 2px;margin-bottom: 5px;">
+            <div style="margin-top:9px;float:left; width:45px;height:40px;background:url(https://avatar-retro.com/habbo-imaging/avatarimage?figure=-<%= player.look %>&amp;size=m&amp;direction=3&amp;head_direction=3&amp;gesture=sml) center -18px;">
+
+            </div>
+            <div style="float:left; width:140px; margin-left:10px;margin-top:10px;">
+                <b><%= player.username %></b>
+                <br> <%= player.refs %> Referrals <img src="<%= website.web_folder %>/img/ref.png">
+            </div>
+        </div>
+    </a>
+    <% }); %>
+</div>
+
+<style>
+    .player {
+        opacity: 0.9;
+    }
+    .player:hover {
+        opacity: 1;
+    }
+</style>
+
+
+<% include ../../footer %>

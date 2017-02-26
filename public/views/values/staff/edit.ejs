@@ -1,0 +1,22 @@
+<% include ../../../header %>
+
+<div class="box" style="width: 960px;float:left;">
+    <div class="title">Edit Value</div>
+    <div style="margin-right: 10px;float:none;" class="boxcontent">
+        <form method="post" action="/values/actions/edit">
+            <label> <h3>Rare Name</h3> </label>
+            <input style="width: 100%;" type="text" class="input_box" name="name" size="50" value="<%= value.name %>">
+            <label> <h3>Image Url</h3> </label>
+            <input style="width: 100%;" type="text" class="input_box" name="imgurl" size="50" value="<%= value.imgurl %>">
+            <label> <h3>Price</h3> </label>
+            <input style="width: 100%;" type="text" class="input_box" name="price" size="50" value="<%= value.price_edit %>">
+            <div class="settings-buttons">
+                <input type="hidden" value="<%= value.id %>" name="id">
+                <input type="submit" value="Submit" name="submit" class="normal_button_green" style="float: right;">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<% include ../../../footer %>

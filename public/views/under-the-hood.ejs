@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Twist CMS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500,700');
+        html, body {
+            padding: 0;
+            margin: 0;
+            background: #0c3a65;
+            color: #7ecaee;
+            height: 100%;
+            width: 100%;
+            font-size: 1.12em;
+        }
+        div#pin_container {
+            font-family: 'Ubuntu', sans-serif;
+            position: absolute;
+            width: 340px;
+            height: 400px;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            background-color: #0b6395;
+            border-radius: 4px;
+            padding: 1.5%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .border_radius {
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -moz-border-radius: 3px;
+        }
+        a#logo {
+            position: absolute;
+            background-image: url('https://imgur.com/a1Oiofu.png');
+            background-repeat: no-repeat;
+            background-size: 70%;
+            width: 199px;
+            height: 75px;
+            left: 50px;
+            right: 0;
+            top: 180px;
+            margin: auto;
+        }
+        #pin_container .fix h1 {
+            position: relative;
+            text-align: center;
+            top: -15px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+<a href="/" id="logo"></a>
+<div id="pin_container">
+    <div class="fix">
+        <h1>Twist CMS <%= version %></h1>
+        <ul>
+            <li>Built on Node</li>
+            <li>BCRYPT Hashing</li>
+            <li>Advanced System Caching</li>
+            <li>Blazing Fast Speed
+            <li>Extensive Features</li>
+        </ul>
+        <br>
+        <ul>
+            <li>Don't compete with others, dominate.</li>
+        </ul>
+        <p style="position:absolute;bottom:0%;">&copy; 2017, <b>Chris P.</b></p>
+    </div>
+</div>
+</body>
+</html>

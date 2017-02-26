@@ -1,0 +1,42 @@
+<% include ../../header %>
+
+<div class="box" style="width:730px;float: left;height: 332px;">
+    <div class="title">Latest User!</div>
+    <div class="boxcontent">
+        <div style="background: url(https://imgur.com/jbiUTN2.png); width:710px;height:243px;margin-top: 15px;">
+            <div style="background: url(https://avatar-retro.com/habbo-imaging/avatarimage?figure=<%= newbie.look %>&amp;direction=2&amp;size=m&amp;head_direction=2&amp;action=wlk&amp;gesture=sml)center center;position: absolute;height: 180px;width: 120px;background-repeat: no-repeat;margin-top: 25px;margin-left: 170px;"></div><p class="teamfont" style="background: rgba(0,0,0,0.4); padding: 10px; font-size: 22px; font-weight: 600; margin-left: 180px; margin-top: 25px; border-radius: 2px; position: absolute;">Welcome to our latest user <%= newbie.username %></p>
+            <div style="height:243px;" class="fade"> </div>
+        </div>
+    </div>
+</div>
+
+<div class="box" style="width: 230px;float: right;margin-right: -20px;">
+    <div class="title"><%= website.name %> Overview</div>
+    <div class="boxcontent">
+        <img src="https://imgur.com/gGKG54t.png"> Users online: <%= stats.users_online %>
+        <br><br>
+
+        <img src="https://imgur.com/KxOlU7Z.png"> Rooms Active: <%= stats.rooms_active %>
+        <br><br>
+
+        <img src="https://imgur.com/x4ahVV7.png"> Registered Users: <%= stats.users %>
+        <br><br>
+
+        <img src="https://imgur.com/sm4dnzG.png"> Rooms: <%= stats.rooms %>
+        <br><br>
+
+        <img src="https://imgur.com/4lW4PLS.png"> Badges: <%= stats.badges %>
+        <br><br>
+
+        <img src="https://imgur.com/ZBbGUD6.png"> Favorite rooms: <%= stats.favorite_rooms %>
+        <br><br>
+
+        <img src="https://imgur.com/FVLR5np.png"> Furniture in the catalog: <%= stats.catalog_items %>
+        <br><br>
+
+        <img src="https://imgur.com/8YrlxoH.png"> Bans: <%= stats.bans %>
+    </div>
+</div>
+
+
+<% include ../../footer %>

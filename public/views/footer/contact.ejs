@@ -1,0 +1,30 @@
+<% include ../../header %>
+
+<div class="box" style="top: 15px;position: relative;width: 960px;float: left;">
+    <div class="title">Contact Us</div>
+    <div class="boxcontent" style="float: none;">
+        <form name="form" method="post">
+            <div class="form-group">
+                <label style="font-size: 18px;float: left;width: 468px;display: block;padding-bottom: 20px;" for="textArea" class="col-lg-2 control-label">Username</label>
+                <label style="font-size: 18px;float: left;width: 468px;display: block;padding-bottom: 20px;" for="textArea" class="col-lg-2 control-label">Topic</label>
+                <input style="width: 468px;" class="input_box" type="text" size="32" maxlength="32" name="username" value="<%= user.username %>" readonly="">
+                <select style="width: 468px;" class="input_box" name="topic">
+                    <option value="general">General questions</option>
+                    <option value="staff">Report a staff</option>
+                    <option value="bug">Bug or Fixes</option>
+                    <option value="idea">Idea</option>
+                    <option value="shop">Shop problems</option>
+                    <option value="other">Other problem</option>
+                </select>
+                <label style="font-size: 18px;float: left;width: 58px;display: block;padding-bottom: 20px;padding-top: 20px;" for="textArea" class="col-lg-2 control-label">Message</label><span style="line-height: 60px;margin-left: 28px;" class="help-block">Make sure it is not too long nor too short.</span>
+                <textarea style="width: 940px;" class="input_box" name="message" rows="3" id="reden"></textarea>
+                <div class="form-group">
+                    <p style="float:left;">Create Help Ticket if you have any questions!</p>
+                    <button style="float:right;" type="submit" name="sendticket" id="button" class="normal_button_green">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<% include ../../footer %>
